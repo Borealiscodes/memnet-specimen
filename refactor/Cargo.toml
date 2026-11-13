@@ -1,0 +1,22 @@
+[package]
+name = "memnet-sovereign-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["Borealis S. Hedling"]
+description = "Deterministic XOR routing, asymmetric Ed25519 capability grants, and compile-time Dormant consent membranes for memnet-specimen (NDH-Meta-Systems methodology)."
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+ed25519-dalek = { version = "2.1", default-features = false }
+sha2 = { version = "0.10", default-features = false }
+
+[dev-dependencies]
+ed25519-dalek = { version = "2.1", default-features = false, features = ["rand_core"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
