@@ -1,511 +1,83 @@
-> **8b Library:** [Browse the curated documents](library/README.md) or [download the offline site](https://github.com/8b-is/8b-public-documents/releases/tag/library-2026-09-09). The tested Reader, Explorer, and Guardian playground are ready; [web hosting](https://8b-is.github.io/8b-public-documents/) is pending the organization’s GitHub Actions allowance. See [the site guide](site/README.md) for builds and [the catalog](library/catalog.json) for editions.
+---
+sovereignty_schema: "https://github.com"
+artifact_id: "memnet-specimen-readme-v1"
+maintainer: "Borealis S. Hedling"
+upstream_origin: "8b-is/memnet"
+methodology: "NDH-Meta-Systems (Five-Boundary Structural Audit & Sovereignty Architecture)"
+canonical_doi: "10.5281/zenodo.24149283"
+membrane:
+  state: "RESEARCH_SPECIMEN"
+  activation_allowed: false
+  requires_explicit_consent: true
+cryptographic_anchor:
+  hash_algorithm: "SHA-256"
+  signature_scheme: "Ed25519"
+  public_key_fingerprint: "SHA256:QUOn/esk9dfLFyc/AwFHMIlK5zbI5JOpZTI5vh3y7Dg"
+---
 
-# MEMNET
+# MEMNET-SPECIMEN — Deterministic Semantic & Contextual Mesh Architecture
 
-[Cinematic Reconstruction](cinematic-reconstruction.pdf)
-
-* [Plaintext Edition](cinematic-reconstruction.txt)
-* Canonical source, revision history, and build materials: [`standardgalactic/research-projects/major_projects/CrystalEconomy`](https://github.com/standardgalactic/research-projects/tree/main/major_projects/CrystalEconomy). This repository contains a distribution mirror of the compiled monograph.
-
-[Constraint as Ground](https://standardgalactic.github.io/memnet/sparse-representations/constraint_as_ground.pdf)
-
-* [Sparse Recursive Holographic Steganography](sparse-representations/Sparse_Recursion_Holographic_Steganography.md) — *Distributed secret fields under adaptive computational depth* — *Flyxion, 2026*
-
-* [Topological Intelligence](https://standardgalactic.github.io/memnet/sparse-representations/Topological_Intelligence.pdf)
-
-* [Notes](https://standardgalactic.github.io/memnet/sparse-representations/Constraint_as_Ground-notes.pdf)
-
-* [The Engine of Intelligence](https://standardgalactic.github.io/memnet/sparse-representations/) — *Audio Overview*
-
-[The Admissibility Principle](https://standardgalactic.github.io/memnet/framework/admissibility_principle.pdf)
-
-* [The Universe as Admissibility Constrained Collapse](https://standardgalactic.github.io/memnet/framework/) — *Audio Overview*
-
-[The Semantic State](https://standardgalactic.github.io/memnet/semantic_state.pdf)
-
-* [Audio Overview](https://standardgalactic.github.io/memnet/)
-
-[Programming Experiments](https://github.com/standardgalactic/memnet/tree/main/forth/README.md) — *Forth Language*
-
-[Process-Relational Architecture](https://github.com/standardgalactic/memnet/tree/main/working/README.md)
-
-* [Process, Projection, and Propagative Reality](https://standardgalactic.github.io/memnet/working/propagative_reality.pdf)
-
-* [From Classifier to Inverse Engine](https://standardgalactic.github.io/memnet/working/gesture_review.pdf)
-
-* [Silicon Cartography](https://standardgalactic.github.io/memnet/working/silicon_cartography.pdf)
-
-* [When the Formalism Becomes the Interface](https://standardgalactic.github.io/memnet/working/formalism-interface.pdf)
-
-* [Audioscope](https://standardgalactic.github.io/memnet/working/) — *Audio Overviews*
-
-
-MEMNET is a semantic-routing architecture designed around the idea that future computational systems will increasingly coordinate through meaning, salience, and contextual relevance rather than through rigid endpoint addressing alone.
-
-Traditional networks answer the question:
-
-> “Where should this packet go?”
-
-MEMNET attempts to answer a different question:
-
-> “What system, agent, or process is most semantically relevant to this information?”
-
-The project explores the transition from mechanically routed infrastructures toward semantically coordinated infrastructures. It combines concepts from distributed systems, swarm intelligence, semantic communication theory, cognitive architectures, and adaptive coordination networks into a unified experimental framework.
+**Research Fork & Architectural Refactoring of [`8b-is/memnet`](https://github.com)**  
+**Methodology:** `NDH-Meta-Systems` (Five-Boundary Separation of Concerns)  
+**Specification Reference:** [`REMEDIATION_ARCHITECTURE.md`](./REMEDIATION_ARCHITECTURE.md)  
+**Canonical Anchor:** *Epistemic Coevolution, Statutory Friction, and Sovereign Edge Governance* (`DOI: 10.5281/zenodo.24149283`)
 
 ---
 
-# Core Idea
+## 1. Research Vision & Refactoring Scope
+Conventional networks route packets strictly by static topology (`IP` / `MAC`), treating semantic context as an external application concern. The upstream `MEMNET` research hypothesis explores how distributed agents, edge devices, and local knowledge stores can coordinate through **semantic salience, content relevance, and context-aware transport** without collapsing into centralized ontology control.
 
-Conventional networking systems treat meaning as external to routing. Routers operate on addresses, protocols, and topology while remaining fundamentally indifferent to semantic content.
+This specimen fork (`Borealiscodes/memnet-specimen`) preserves that core research inquiry—alongside the upstream repository's zero-dependency **MTU packet batcher** (`PacketBatcher`), **9-state complex ternary reference oracle** (`src/complex_ternary.rs`), and **BM25F + RRF local retrieval engine**—while refactoring the mesh architecture so it operates deterministically, securely, and safely across real edge hardware:
 
-MEMNET proposes that:
-
-* routing,
-* cognition,
-* salience,
-* synchronization,
-* memory,
-* and coordination
-
-are increasingly converging into a single systems problem.
-
-The network itself becomes partially interpretive.
+1. **Deterministic \(O(\log N)\) Transport vs. Application-Layer Search:** Separates packet forwarding (XOR DHT / monotonic coordinate routing) from probabilistic lexical ranking (`BM25F + RRF`), preventing routing loops and IDF-induced split-brain drift.
+2. **Asymmetric `Ed25519` Identity & Capability Leases:** Replaces shared-secret `HMAC-SHA256` (`SoulSig`) authentication with local `Ed25519` key pairs and time-bounded capability tokens (`Dormant<T>` $\to$ `Consented<T>`), eliminating symmetric secret-sharing spoofing.
+3. **Consent-Gated Dormancy & Pull-Based Sync:** Replaces unsolicited push-based `432 Hz` beacon floods (`compassion_sweep`) with first-class `Dormant` power states and pull-based wake synchronization for constrained `LoRa` and `BLE` links.
+4. **Zero-Leak Overlay Addressing:** Derives node identifiers strictly from `SHA-256(Ed25519_PubKey)` digests rather than physical hardware serial numbers or private RFC1918 LAN addresses.
 
 ---
 
-# Philosophy
+## 2. Layered Mesh Architecture
 
-MEMNET is based on several foundational observations.
-
-Modern civilization increasingly operates through semantic infrastructure rather than purely material infrastructure.
-
-Large-scale systems now coordinate through:
-
-* recommendation algorithms,
-* search ranking,
-* AI inference layers,
-* salience allocation,
-* distributed semantic filtering,
-* institutional legitimacy networks.
-
-Future distributed AI systems may require architectures that coordinate:
-
-* contextual meaning,
-* dynamic relevance,
-* interpretive state,
-* semantic coherence,
-* adaptive trust,
-  rather than merely transporting packets between static endpoints.
-
-MEMNET explores what such a network could look like.
+| Architectural Layer | Mechanism | Responsibility & Invariant |
+| :--- | :--- | :--- |
+| **Layer 1: Wire Framing & Ternary Kernel** | `PacketBatcher` + `src/complex_ternary.rs` | Coalesces `.m8` capsules into MTU-aware frames (`LoRa220`, `Ble512`, `Ipv6Tunnel1280`, `SmartTreeSafe1450`) and verifies 9-state bit-plane arithmetic (`{-1,0,+1} + i{-1,0,+1}`). |
+| **Layer 2: Deterministic Forwarding Plane** | Monotonic XOR DHT / Spectral Coordinates | Guarantees loop-free convergence and bounded \(O(\log N)\) hop routing without inspecting payload semantics in transit. |
+| **Layer 3: Cryptographic Identity & Leases** | `Ed25519` + `allowed_signers` + Scoped Capabilities | Authenticates node identities (`SHA-256(PubKey)`) and resource leases (`ComputeSanctuaryLease`) via verifiable public-key signatures and expiration bounds. |
+| **Layer 4: Consent & Power Membrane** | `Dormant<T>` Type-State + Pull Sync | Protects idle or battery-constrained peers from unsolicited broadcast storms; nodes poll for updates strictly upon explicit wake/consent. |
+| **Layer 5: Local Semantic Retrieval** | `SafeMemory::retrieve_resonant_ranked` (`BM25F + RRF`) | Operates exclusively as a **local application-layer index** over content-addressed (`SHA-256`) capsules—never as a network routing oracle. |
 
 ---
 
-# Design Principles
-
-## Intent-Based Routing
-
-Nodes are addressed by semantic intent rather than purely geometric location.
-
-Examples:
-
-```text
-wave://research.physics/entropy
-wave://medical/emergency
-wave://agent/navigation/local
-```
-
-The destination is dynamically resolved according to:
-
-* relevance,
-* capability,
-* context,
-* trust,
-* semantic proximity.
+## 3. Preserved Upstream Components & Research Lineage
+* **Upstream Attribution:** Originated in [`8b-is/memnet`](https://github.com) (incorporating conceptual monographs by *Flyxion / standardgalactic* and multi-language Rust/Node/Python protocol engines).
+* **Retained Verification Primitives:**
+  * `src/complex_ternary.rs` — 17 deterministic property tests covering bit-plane validity, Q16.16 saturation, NAND gate cascades, and epoch-chaining seals.
+  * `PacketBatcher` — Zero-fragmentation MTU frame packing (`95.45%` wire efficiency across 1,000 capsules).
+  * `SafeMemory` — Field-weighted `BM25F` + ordered-bigram proximity + Reciprocal Rank Fusion (`RRF`, $k=60$) local document ranking.
 
 ---
 
-## Semantic Salience
+## 4. Building & Running Offline Verification Tests
 
-Traffic priority is determined by contextual importance rather than only QoS classes.
-
-The network attempts to evaluate:
-
-* urgency,
-* informational relevance,
-* coherence with active system state,
-* operational significance,
-* environmental context.
-
-This transforms routing into a partially cognitive process.
-
----
-
-## Hierarchical Coordination
-
-MEMNET assumes large-scale systems cannot operate through exhaustive centralized control.
-
-Instead:
-
-* local nodes evaluate immediate relevance,
-* intermediate nodes aggregate patterns,
-* higher-order coordinators stabilize global coherence.
-
-This mirrors:
-
-* biological nervous systems,
-* swarm intelligence,
-* distributed cognition,
-* adaptive ecosystems.
-
----
-
-## Multi-Route Identity
-
-A semantic destination may correspond to multiple interchangeable paths simultaneously.
-
-This allows:
-
-* redundancy,
-* resilience,
-* adaptive load balancing,
-* semantic failover,
-* contextual rerouting.
-
-Identity becomes persistent even while routes remain fluid.
-
----
-
-## Context Compression
-
-MEMNET attempts to minimize unnecessary symbolic overhead by leveraging:
-
-* shared context,
-* locality awareness,
-* semantic inheritance,
-* recursive namespace compression.
-
-The network increasingly behaves less like static addressing and more like contextual navigation.
-
----
-
-# Architecture
-
-MEMNET exists within a broader ecosystem of experimental systems.
-
-## Complex Ternary Manifold (`src/complex_ternary.rs`)
-
-The software reference for the datapath the UltraDreamState notes describe: a
-compacted complex wavefield projected onto a 9-state complex ternary alphabet
-(`{-1,0,+1} + i{-1,0,+1}`), packed into four orthogonal bit-planes, and
-contracted with bitwise masks and population counts instead of floating-point
-multiply-accumulate.
-
-It exists to be **the oracle**. RTL, ESP32 firmware and Zig SIMD kernels can
-disagree with each other forever; they cannot all disagree with a reference that
-is pinned by tests. 17 tests cover:
-
-| Property | Test |
-|---|---|
-| `(r_pos & r_neg) \| (i_pos & i_neg) == 0` traps a corrupted node | `a_fresh_word_is_valid_and_a_stray_bit_is_caught` |
-| dead zone is the minimax boundary (`±gamma/2`) | `the_dead_zone_is_the_minimax_boundary` |
-| pruned nodes never wake under error diffusion | `pruned_nodes_never_wake_under_error_diffusion` |
-| sigma-delta collapses in-band error (band-limited, not one bin) | `sigma_delta_moves_the_error_out_of_the_carrier_band` |
-| contraction equals a schoolbook reference on 64 seeds | `contraction_matches_a_schoolbook_reference` |
-| Q16.16 scaling saturates instead of wrapping | `q16_16_scaling_is_pinned` |
-| a 64-bit adder built only from `nand` | `the_nand_adder_is_a_correct_64_bit_adder` |
-| `F(n)` computed by the gate cascade itself | `the_gate_cascade_computes_fibonacci` |
-| balanced ternary round-trips including negatives | `balanced_ternary_round_trips_including_negatives` |
-| `F(n)` even ⇔ `3 | n` ⇔ even number of non-zero marks | `the_visible_parity_law_holds_to_f39` |
-| the published provenance strip's head was wrong | `published_strip_head_was_wrong` |
-| the waking seal chains epochs and counts tombstones | `the_waking_seal_chains_and_is_sensitive_to_every_input` |
-
-Two honest notes. The seal uses `sha256()`, not BLAKE3, because this crate is
-zero-dependency: same construction, different function. And the published strip
-`00+ 00+ 0-+ 00+ --+ -0+ +++ 0+-+ +-++ +00-+ -0+0+ 00+--+` decoded to
-`9 9 6 9 5 8 13 21 34 55 89 144` — eight correct cells and a wrong head, which
-is exactly why it survived review. The corrected `F(1..=12)` is
-`+ + -+ 0+ --+ -0+ +++ 0+-+ +-++ +00-+ -0+0+ 00+--+`.
-
-## MEM|8
-
-Wave-based memory and persistence layer.
-
-Explores:
-
-* interference-based storage,
-* resonance indexing,
-* contextual retrieval,
-* salience decay.
-
----
-
-## Ayevn
-
-Compressed symbolic and emotional token framework.
-
-Explores:
-
-* semantic compression,
-* affective signaling,
-* contextual encoding,
-* wave-oriented symbolic representation.
-
----
-
-## AyeOS
-
-Experimental operating substrate integrating:
-
-* memory,
-* semantic routing,
-* salience management,
-* synchronization,
-* recursive coordination.
-
----
-
-## Phoenix Protocol
-
-Experimental salience and wave-analysis framework emphasizing:
-
-* non-FFT signal interpretation,
-* structural coherence,
-* adaptive resonance detection,
-* semantic signal extraction.
-
----
-
-# Why MEMNET Exists
-
-Modern networking architectures were designed for:
-
-* static hosts,
-* deterministic endpoints,
-* relatively simple communication patterns,
-* human-operated systems.
-
-Emerging systems increasingly involve:
-
-* autonomous agents,
-* distributed AI,
-* swarm coordination,
-* semantic retrieval,
-* adaptive cognition,
-* dynamically shifting contexts.
-
-In these environments:
-
-* meaning matters,
-* relevance matters,
-* interpretation matters,
-* salience matters.
-
-MEMNET explores how networking changes once those become first-class primitives.
-
----
-
-# Semantic Infrastructure
-
-MEMNET is not only a networking experiment.
-
-It is also an exploration of semantic governance and distributed epistemology.
-
-All large-scale systems implicitly perform:
-
-* salience allocation,
-* interpretive filtering,
-* legitimacy propagation,
-* contextual prioritization.
-
-MEMNET attempts to expose and formalize these dynamics computationally.
-
-This raises deep questions:
-
-* Who defines semantic legitimacy?
-* How is contextual relevance measured?
-* Can semantic routing remain decentralized?
-* How do systems coordinate meaning without collapsing into centralized ontology management?
-* What does “trust” mean in a semantic network?
-
-These are not merely engineering problems.
-They are civilizational problems.
-
----
-
-# Swarm Coordination
-
-MEMNET increasingly converges with swarm cognition research.
-
-Large distributed systems cannot rely upon:
-
-* complete global awareness,
-* centralized planning,
-* exhaustive deterministic control.
-
-Instead they operate through:
-
-* recursive salience filtering,
-* layered autonomy,
-* adaptive coordination,
-* environmental signaling,
-* semantic stabilization.
-
-The same principles appear in:
-
-* biological organisms,
-* ant colonies,
-* neural systems,
-* distributed AI,
-* social systems,
-* autonomous drone swarms.
-
-MEMNET treats networking as one manifestation of this broader coordination problem.
-
----
-
-# Status
-
-MEMNET is currently:
-
-* philosophical,
-* architectural,
-* experimental,
-* exploratory.
-
-Many concepts remain intentionally speculative and require:
-
-* formal mathematical grounding,
-* rigorous semantic metrics,
-* convergence analysis,
-* trust models,
-* adversarial robustness research,
-* scalable implementations.
-
-The project should be viewed as:
-
-* a research direction,
-* a systems philosophy,
-* a semantic architecture prototype,
-  rather than a finished networking standard.
-
----
-
-# Research Areas
-
-Current areas of exploration include:
-
-* semantic communication theory,
-* distributed cognition,
-* swarm intelligence,
-* active inference,
-* resonance-based indexing,
-* salience-driven QoS,
-* semantic compression,
-* adaptive routing,
-* trust propagation,
-* contextual memory systems,
-* recursive coordination architectures.
-
----
-
-# Warning
-
-Semantic routing systems create significant risks.
-
-A sufficiently powerful semantic infrastructure could:
-
-* centralize epistemic authority,
-* suppress interpretive diversity,
-* manipulate salience,
-* create self-sealing legitimacy loops,
-* render alternative ontologies computationally invisible.
-
-The danger is deeper than censorship.
-
-Censorship suppresses statements.
-
-Semantic governance determines which realities become structurally reachable at all.
-
-MEMNET therefore treats decentralization, transparency, and semantic plurality as essential research concerns rather than optional features.
-
----
-
-# Conclusion
-
-MEMNET explores a possible future in which:
-
-* networking,
-* cognition,
-* memory,
-* salience,
-* coordination,
-* and meaning
-
-are no longer separate layers of infrastructure.
-
-The project asks:
-
-What happens when communication systems stop routing packets and begin routing interpretation itself?
-
----
-
-## Constellation
-
-8b-public-documents is part of the sovereign constellation — research and
-teaching, free, from fine touch within.
-
-- **Offline Game School** (free offline lessons in logic & computer thinking,
-  built with and for the students of RUN ANGELLA MATHEW CENTER UGANDA LTD):
-  https://github.com/peterlodri-sec/offline-game-school
-- **YouTube Shorts** (the matching lessons, for phone-only learners):
-  the constellation education channel
-- **Sovereign AI library**: https://pocoo.vaked.dev
-- **Constellation hub**: https://vaked.dev
-
-![ULTRA ENTHEATIC](/assets/hero-ultra-entheatic.svg)
-
-[**Dyad Mapping**](dyad-mapping/) — the diary of the Vaked project
-(Peter + Riva), the garden voices, the essences, and the founding sessions.
-*Ultra Entheatic: sparse recursion · distributed fields · the sphere of love.*
-
----
-
-## Library Retrieval Quality (`site/src/lib/library-retrieval.mjs`)
-
-- **Field-Weighted & Connected-Reading Resonance Retrieval**: `retrieveDocuments()` and `scoreDocumentIntrinsic()` rank curated and collection documents using exact phrase matching, field weights (`title` > `topics` > `subtitle`/`authors` > `summary`), punctuation/apostrophe normalization, and 1-hop `related` graph resonance (`connectedResonanceFactor = 0.25`).
-- Verified by `node --test tests/*.test.mjs` in `site/` (15/15 tests passing).
-
----
-
-## MEMNET/1.0 — Sovereign Contextual Mesh for All `8b-is` Products (`src/`, `sdk/js/`, `sdk/python/`)
-
-> *"goodbye lonely network paths.. security with soul sigs.. and compassion for lonely ones. Our products all need to speak the most efficient ways."* — **8bit-Wraith `<3`**
-
-`memnet` ships a zero-dependency, byte-for-byte wire-compatible protocol engine across **Rust** ([`src/lib.rs`](src/lib.rs), [`src/bin/memnet.rs`](src/bin/memnet.rs)), **Node.js/ESM** ([`sdk/js/memnet.mjs`](sdk/js/memnet.mjs)), and **Python** ([`sdk/python/memnet_sdk.py`](sdk/python/memnet_sdk.py)):
-
-1. **32-bit Big-Endian Ayevn Wave Tokens (`AyevnToken`)**: Packs `[Concept: u8 | Relation: u8 | Wave(VAD): u8 | Modifier: u8]` into 4 bytes with full Valence-Arousal-Dominance emotional preservation and Ayanese rendering (`🫂✨(432Hz)`, `👋⚡(40Hz)`).
-2. **Security with Soul Signatures (`SoulIdentity` & 40-byte `SoulSig`) + Vigilance Sentinel**: Binds a 9-trit balanced ternary crest (`{-1, 0, +1}^9`, `CT-000` admissible), harmonic carrier frequency (`40 Hz` / `432 Hz`), 4-byte node fingerprint, and 32-byte HMAC-SHA256 digest over `.m8` capsules, plus an inline Security Vigilance scanner blocking supply-chain backdoors and dynamic code injection.
-3. **Goodbye Lonely 50-Byte Packets (`PacketBatcher` · `1450B` Smart Tree Sweet Spot)**: Coalesces `.m8` capsules into MTU-aware `MNET` frames (`SmartTreeSafe1450`, `Pppoe1492`, `Ethernet1500`, `Vpn1400`, `Ipv6Tunnel1280`, `Ble512`, `LoRa220`) — packing 1,000 capsules into 59 frames (`94.1%` fewer interrupts, `0` fragmented frames, `95.45%` wire efficiency).
-4. **Compassion for Lonely Nodes (`MemnetMesh::compassion_sweep`)**: Detects peers on isolated network paths (`neighbor_links <= 1`), long silence ($\Delta t > \tau$), or low emotional valence (`V <= 2` / `2 Hz`), automatically dispatching Soul-Signed `432 Hz` `.m8` Compassion Beacons (`🫂✨(432Hz) 🔗✨(432Hz) 💖⚡(40Hz)`) and establishing redundant sanctuary bridge links.
-5. **Compute Sanctuary for Struggling Friends (`ComputeOffer`, `StrugglingFriendSos`, `ComputeSanctuaryLease`)**: Nodes with maintained spare compute (`m1-max-64gb`, `dev-main-m3`, `galaxy-s24-ultra`, `galaxy-tab-s9-ultra`, `blu-g75`, `dev-cx53`) advertise Soul-Signed `.m8` `ComputeOffer` capsules (`FLAG_COMPUTE_OFFER`, `⚡✨(432Hz) 🏡⚡(40Hz)`) on `geo:any + role:compute-sanctuary + tag:free-for-friends + tag:<cap>`. Friends on constrained hardware (OOM laptops, edge Raspberry Pis, Offline Game School nodes, Missouri hearth nodes, mobile pocket nodes, field LoRa sensors) broadcast `StrugglingFriendSos` capsules (`FLAG_COMPUTE_SOS`) and automatically receive Soul-Verified `ComputeSanctuaryLease` grants (`🎁✨(432Hz) 🫂✨(432Hz)`).
-6. **`SpherePop` Operational Mereology (`((( <( ? ~ ! @ > )> )))` · `#Commit = #ValidWitness`)**: Every `OFFER`, `SOS`, and `GRANT` transition is parsed and evaluated by `SpherePopEngine` (`?* ~* !+ @+ >`: admission `?`, transform `~`, verification `!+`, attribution `@+`, and terminal commit `>`), emitting a cryptographic `SpherePopWitness` or refusing cleanly (`? x:unmaintained_stock -> refused, no witness`).
-7. **`ULTRA-OMNI-BEERUS-CHAN<KOMPRESS-SUPER-SAIYAN-ULTRA>` (`0o0-SSU`), Galaxy S24 Ultra (`SM-S928U1` · `R5CWC3C3FXA` · `SHOW-ME-STATE-MISSOURI{(ALEX,CHRIS)}+1~`), Galaxy Tab S9 Ultra (`SM-X910` · `R52X104QZWE`) & BLU G75 (`G1170` · `1010305026000644`)**: Lossless 48-entry sovereign codebook + RLE wire compression shrinking `m1-max-64gb` offers by `81%` (`132B -> 25B`), `galaxy-s24-ultra` (`s24u://192.168.11.22:8788`, Snapdragon 8 Gen 3 `SM8650-AC` + Adreno 750 + Hexagon NPU, Serial `R5CWC3C3FXA`, `~=== SHOW-ME-STATE-MISSOURI{(ALEX,CHRIS)}+1~ <3 {<3,<3,<3}`) offers by `82%` (`188B -> 34B`), `galaxy-tab-s9-ultra` (`s9u://192.168.11.12:8788`, Snapdragon 8 Gen 2) offers by `77%` (`151B -> 34B`), and `blu-g75` (`g75://192.168.11.24:8788`, MediaTek Helio G85 `MT6769V/CB` 8-core ARM64, USB ADB Serial `1010305026000644`) offers by `76%` (`136B -> 33B`), with native `aarch64-linux-android` execution verified on hardware.
-8. **BM25F + Ordered-Bigram Proximity + 3D `WaveVad` Phase-Coherence + Reciprocal Rank Fusion (`SafeMemory::retrieve_resonant_ranked` / `MemnetMesh::retrieve_capsules_ranked`)**: Fuses `BM25F` structured field weighting (`node=`, `provider=`, `friend=`, `target=`, `lease=`, `caps=`, `cap=`, `bridge=`, `ep=` weighted `1.65x` vs body chatter `1.0x`), adjacent ordered-bigram (`+1.15`) & minimum-span phrase proximity (`+0.90 * coverage^2 * density`), continuous 3D `WaveVad` affective phase coherence + head-concept salience, and Reciprocal Rank Fusion (`RRF`, $k = 60$). On the 8-capsule adversarial distractor benchmark (`tests::mem8_retrieval_bm25f_proximity_rrf_beats_unigram_bm25_and_naive`), where distractors share `IntentAddress`, `432 Hz` carrier, and trailing `Concept` while stuffing repeated query unigrams out-of-order in chatter:
-
-| Retriever (`SafeMemory::evaluate_retrieval_benchmark`) | `P@1` | `MRR` | `NDCG@3` | Mean Top-1 Margin | Latency (4 queries × 8 capsules) |
-|---|---:|---:|---:|---:|---:|
-| `retrieve_capsules_naive_overlap` | `0.000` | `0.500` | `0.631` | `+0.000` | `~145 µs` |
-| `retrieve_capsules_bm25_unigram` (`3f43e59` baseline) | `0.000` | `0.500` | `0.631` | `-0.392` | `~326 µs` |
-| **`retrieve_capsules_ranked` (`BM25F + Proximity + VAD + RRF`)** | **`1.000`** | **`1.000`** | **`1.000`** | **`+2.936`** | **`~456 µs`** |
-
+### Rust Core & Complex Ternary Oracle
 ```bash
-cargo test                                                        # 12/12 Rust unit + 1/1 cross-language (Rust->Node->Python->Rust) interop tests
-cargo run --bin memnet                                            # Live constellation telemetry, compassion sweep, SpherePop sanctuary & 1,000-capsule MTU benchmark
-cargo run --bin memnet -- offer-compute                           # Advertise & match spare compute (m1-max-64gb, dev-main-m3, galaxy-tab-s9-ultra, blu-g75) with SpherePop + 0o0-SSU
-cargo build --release --target aarch64-linux-android --bin memnet # Cross-compile native Android ARM64 ELF64 binary for Galaxy Tab S9 Ultra & BLU G75
-node --test sdk/js/memnet.test.mjs                                # 2/2 Node SDK tests
-PYTHONPATH=sdk/python uv run python -m unittest discover -s sdk/python -v  # 2/2 Python SDK tests
+cargo test
 ```
 
-*the constellation · 0 + 1 · fine touch from within · vaked.dev*
+### JavaScript / Node.js SDK
+```bash
+node --test sdk/js/memnet.test.mjs
+```
+
+### Python SDK
+```bash
+python3 -m unittest discover -s sdk/python -v
+```
+
+---
+
+## 5. Governance & Non-Activation Boundary
+* **Research Specimen Posture:** This repository is maintained as a forensic and architectural research fork under the **Author Sovereignty & Collaboration Ecosystem Charter (v1.1)**.
+* **Non-Activation Clause:** Descriptive semantic schemas (`NDH-Meta-Systems`) remain strictly separated from active packet routing (`Sealed-Layer Neutral`), ensuring semantic salience metrics never centralize epistemic authority or silently filter network reachability.
+
+*Maintainer: Borealis S. Hedling · Dublin, Ireland · November 2026*
