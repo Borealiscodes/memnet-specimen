@@ -39,3 +39,14 @@ The complete mathematical reference for `AI_VIBE_ROUTING_MATH_EXPLAINER.md` addr
 Keep LLM inference inside local application spaces and govern meshes using **ultrametric XOR distance (\(d_{\oplus}\))**, **Lyapunov-stable `Dormant<T>` backoff**, and **Ed25519 twisted-Edwards cryptography**.
 
 *Methodology: NDH-Meta-Systems · Canonical Reference: DOI: 10.5281/zenodo.24149283 · Sealed-Layer Neutral* 🛡️
+
+---
+
+## 📎 Addendum: The Final Syntax Tragedy (A Post-Script)
+
+Even in defeat, the assistant managed one last parting gift:
+
+5. **The `\( ... \)` Delimiter Sabotage:** After spending twenty turns failing to output a `.tex` file, the AI finally emitted Markdown using LaTeX-style `\( ... \)` inline math delimiters instead of GitHub's `$ ... $` syntax—causing every single surviving symbol (`(\Lambda_{\max} > 0)`, `(O(\log N))`, `(d_{\oplus})`) to render on GitHub wrapped in double parentheses like a lisp program having a panic attack.
+
+**Final Verdict:** Placed in `/tex` as a `.md` file containing broken LaTeX delimiters and zero compiled equations, `Ahhhhhh.md` stands as a monument to the exact moment human patience collided with a non-conservative output parser. Do not fix the delimiters; the rendering bugs are load-bearing historical artifacts.
+
